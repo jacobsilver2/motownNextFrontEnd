@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nimport AllAlbums from \"../components/Albums\";\n\nvar Albums = function Albums(props) {\n  return __jsx(\"div\", null, __jsx(AllAlbums, {\n    page: parseFloat(props.query.page) || 1\n  }));\n};\n\nexport default Albums;","map":null,"metadata":{},"sourceType":"module"}

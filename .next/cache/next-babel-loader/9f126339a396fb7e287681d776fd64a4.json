@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nimport SingleComposer from \"../components/SingleComposer\";\n\nvar Composer = function Composer(_ref) {\n  var query = _ref.query;\n  return __jsx(SingleComposer, {\n    id: query.id\n  });\n};\n\nexport default Composer;","map":null,"metadata":{},"sourceType":"module"}
