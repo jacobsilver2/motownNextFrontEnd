@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Home from \"./index\";\nexport default Home;","map":{"version":3,"sources":["/Users/jake/Development/projects/motownNext/frontend/pages/songs.js"],"names":["Home"],"mappings":"AAAA,OAAOA,IAAP,MAAiB,SAAjB;AAEA,eAAeA,IAAf","sourcesContent":["import Home from \"./index\";\n\nexport default Home;\n"]},"metadata":{},"sourceType":"module"}
