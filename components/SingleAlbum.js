@@ -53,6 +53,9 @@ const SongsList = styled.div`
   .p-card-title {
     text-align: left;
   }
+  @media screen and (max-width: 970px) {
+	      grid-template-columns: 1fr;
+	    }
 `;
 
 const SINGLE_ALBUM_QUERY = gql`

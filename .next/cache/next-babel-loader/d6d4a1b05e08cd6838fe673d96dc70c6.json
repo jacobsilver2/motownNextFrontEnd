@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nimport Songs from \"../components/Songs\";\n\nconst Home = props => {\n  return __jsx(\"div\", null, __jsx(Songs, {\n    page: parseFloat(props.query.page) || 1\n  }));\n};\n\nexport default Home;","map":null,"metadata":{},"sourceType":"module"}

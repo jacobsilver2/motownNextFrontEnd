@@ -31,6 +31,9 @@ const SingleArtistStyles = styled.div`
 const AlbumsAndSongs = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: 970px) {
+	grid-template-columns: 1fr;
+  }
 `;
 
 const SINGLE_ARTIST_QUERY = gql`

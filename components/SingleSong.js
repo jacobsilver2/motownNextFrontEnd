@@ -32,6 +32,9 @@ const ComponentTitleCard = styled(ComponentCard)`
 const PerformedByAndRecordingspane = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: 970px) {
+	      grid-template-columns: 1fr;
+	    }
 `;
 
 const SINGLE_SONG_QUERY = gql`

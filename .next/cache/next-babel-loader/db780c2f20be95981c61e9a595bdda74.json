@@ -1,0 +1,1 @@
+{"ast":null,"code":"import styled from \"styled-components\";\nexport const Center = styled.div.withConfig({\n  displayName: \"Center\",\n  componentId: \"hio5ev-0\"\n})([\"text-align:center;\"]);\nexport default Center;","map":null,"metadata":{},"sourceType":"module"}

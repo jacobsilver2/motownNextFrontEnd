@@ -1,0 +1,1 @@
+{"ast":null,"code":"var sortBySelectItems = [{\n  label: \"Name, ascending\",\n  value: \"name_ASC\"\n}, {\n  label: \"Name, descending\",\n  value: \"name_DESC\"\n}];\nexport default sortBySelectItems;","map":null,"metadata":{},"sourceType":"module"}

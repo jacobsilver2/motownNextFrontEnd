@@ -1,0 +1,1 @@
+{"ast":null,"code":"//this is client side config ony. don't put anything in here that\n// shouldn't be public\nexport const endpoint = \"http://localhost:4000\";\nexport const prodEndpoint = 'http://www.motowndb.com:4747';\nexport const perPage = 50;","map":null,"metadata":{},"sourceType":"module"}

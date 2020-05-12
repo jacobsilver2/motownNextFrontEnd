@@ -1,0 +1,1 @@
+{"ast":null,"code":"//this is client side config ony. don't put anything in here that\n// shouldn't be public\n// export const endpoint = `http://localhost:4000`;\n// export const prodEndpoint = `https://sickfits-yoga-prod.herokuapp.com/`;\nexport var endpoint = \"http://localhost:4000\";\nexport var perPage = 50;","map":null,"metadata":{},"sourceType":"module"}
