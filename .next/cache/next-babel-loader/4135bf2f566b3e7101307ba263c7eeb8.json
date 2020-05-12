@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nimport AllComposers from \"../components/Composers\";\n\nconst Composers = props => __jsx(\"div\", null, __jsx(AllComposers, {\n  page: parseFloat(props.query.page) || 1\n}));\n\nexport default Composers;","map":null,"metadata":{},"sourceType":"module"}

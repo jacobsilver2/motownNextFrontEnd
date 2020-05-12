@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nimport UpdateArtist from \"../components/UpdateArtist\";\n\nvar Update = function Update(props) {\n  return __jsx(\"div\", null, __jsx(UpdateArtist, {\n    id: props.query.id\n  }));\n};\n\nexport default Update;","map":null,"metadata":{},"sourceType":"module"}

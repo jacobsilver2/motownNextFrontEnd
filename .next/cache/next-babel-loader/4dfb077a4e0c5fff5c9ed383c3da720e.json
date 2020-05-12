@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nimport SingleSong from \"../components/SingleSong\";\n\nconst Song = ({\n  query\n}) => {\n  return __jsx(SingleSong, {\n    id: query.id\n  });\n};\n\nexport default Song;","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"function getSelectLabel(sortBySelectItems, sortBy) {\n  const filteredSelectItem = sortBySelectItems.filter(item => item.value === sortBy);\n  return filteredSelectItem[0].label;\n}\n\nexport default getSelectLabel;","map":null,"metadata":{},"sourceType":"module"}

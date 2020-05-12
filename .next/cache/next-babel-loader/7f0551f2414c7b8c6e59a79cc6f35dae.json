@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nimport SingleArtist from \"../components/SingleArtist\";\n\nvar Artist = function Artist(_ref) {\n  var query = _ref.query;\n  return __jsx(SingleArtist, {\n    id: query.id\n  });\n};\n\nexport default Artist;","map":null,"metadata":{},"sourceType":"module"}
