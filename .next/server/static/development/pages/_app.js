@@ -2208,9 +2208,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "perPage", function() { return perPage; });
 //this is client side config ony. don't put anything in here that
 // shouldn't be public
-const endpoint = `http://localhost:4000`;
-const prodEndpoint = `https://motowndb-62e7b62db7.herokuapp.com/backend/prod`; // export const prodEndpoint = `https://sickfits-yoga-prod.herokuapp.com/`;
-
+const endpoint = "http://localhost:4000";
+const prodEndpoint = "http://www.motowndb.com:4747";
 const perPage = 50;
 
 /***/ }),
@@ -2509,7 +2508,8 @@ function createClient({
   headers
 }) {
   return new apollo_boost__WEBPACK_IMPORTED_MODULE_1___default.a({
-    uri: true ? _config__WEBPACK_IMPORTED_MODULE_2__["endpoint"] : undefined,
+    //    uri: process.env.NODE_ENV === "development" ? endpoint : endpoint,
+    uri: _config__WEBPACK_IMPORTED_MODULE_2__["endpoint"],
     onError: ({
       networkError,
       graphQLErrors

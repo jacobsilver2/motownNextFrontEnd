@@ -39,13 +39,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next -p 7777",
     "build": "next build",
-<<<<<<< HEAD
-    "start": "next start -p $PORT",
-    "heroku-postbuild": "npm run build"
-=======
     "start": "next start",
     "export": "npm run build && next export"
->>>>>>> 3ef402cda63c03757085ff6ffde628282ab1c09a
   },
   "keywords": [],
   "author": "",

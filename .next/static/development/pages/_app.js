@@ -2276,8 +2276,7 @@ __webpack_require__.r(__webpack_exports__);
 //this is client side config ony. don't put anything in here that
 // shouldn't be public
 var endpoint = "http://localhost:4000";
-var prodEndpoint = "https://motowndb-62e7b62db7.herokuapp.com/backend/prod"; // export const prodEndpoint = `https://sickfits-yoga-prod.herokuapp.com/`;
-
+var prodEndpoint = "http://www.motowndb.com:4747";
 var perPage = 50;
 
 /***/ }),
@@ -2578,7 +2577,8 @@ __webpack_require__.r(__webpack_exports__);
 function createClient(_ref) {
   var headers = _ref.headers;
   return new apollo_boost__WEBPACK_IMPORTED_MODULE_2__["default"]({
-    uri: true ? _config__WEBPACK_IMPORTED_MODULE_3__["endpoint"] : undefined,
+    //    uri: process.env.NODE_ENV === "development" ? endpoint : endpoint,
+    uri: _config__WEBPACK_IMPORTED_MODULE_3__["endpoint"],
     onError: function onError(_ref2) {
       var networkError = _ref2.networkError,
           graphQLErrors = _ref2.graphQLErrors;

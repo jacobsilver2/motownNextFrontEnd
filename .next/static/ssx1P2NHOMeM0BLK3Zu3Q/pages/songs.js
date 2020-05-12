@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[24],{"L+rN":function(n,o,w){"use strict";w.r(o);var i=w("RNiq");o.default=i.default},vpv4:function(n,o,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/songs",function(){return w("L+rN")}])}},[["vpv4",1,2,0,3,5,4,7]]]);
