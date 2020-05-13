@@ -136,14 +136,18 @@ const Albums = ({ page }) => {
         />
       ));
     } else {
-      return albumsBeginningWithData.albums.map((album) => (
-        <Album
-          key={album.id}
-          album={album}
-          addToCheckedItemsList={setCheckedItems}
-          checkedItems={checkedItems}
-        />
-      ));
+      const albumsMap = albumsBeginningWithData.albums.map((album) => {
+        console.log(album);
+        return (
+          <Album
+            key={album.id}
+            album={album}
+            addToCheckedItemsList={setCheckedItems}
+            checkedItems={checkedItems}
+          />
+        );
+      });
+      return albumsMap;
     }
   }
 

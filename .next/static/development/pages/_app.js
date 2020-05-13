@@ -1131,8 +1131,28 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/jake/Development/projects/motownNext/frontend/components/Pagination.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
-function _templateObject8() {
+function _templateObject10() {
   var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query COMPOSERS_PAGINATION_QUERY {\n    composersConnection(\n      where: {\n        OR: [\n          { name_starts_with: \"0\" }\n          { name_starts_with: \"1\" }\n          { name_starts_with: \"2\" }\n          { name_starts_with: \"3\" }\n          { name_starts_with: \"4\" }\n          { name_starts_with: \"5\" }\n          { name_starts_with: \"6\" }\n          { name_starts_with: \"7\" }\n          { name_starts_with: \"8\" }\n          { name_starts_with: \"9\" }\n        ]\n      }\n    ) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query COMPOSERS_PAGINATION_QUERY($letter: String) {\n    composersConnection(where: { name_starts_with: $letter }) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query ARTISTS_PAGINATION_QUERY {\n    artistsConnection(\n      where: {\n        OR: [\n          { name_starts_with: \"0\" }\n          { name_starts_with: \"1\" }\n          { name_starts_with: \"2\" }\n          { name_starts_with: \"3\" }\n          { name_starts_with: \"4\" }\n          { name_starts_with: \"5\" }\n          { name_starts_with: \"6\" }\n          { name_starts_with: \"7\" }\n          { name_starts_with: \"8\" }\n          { name_starts_with: \"9\" }\n        ]\n      }\n    ) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -1142,7 +1162,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query COMPOSERS_PAGINATION_QUERY($letter: String) {\n    composersConnection(where: { name_starts_with: $letter }) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query ARTISTS_PAGINATION_QUERY($letter: String) {\n    artistsConnection(where: { name_starts_with: $letter }) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -1152,7 +1172,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query ARTISTS_PAGINATION_QUERY {\n    artistsConnection(\n      where: {\n        OR: [\n          { name_starts_with: \"0\" }\n          { name_starts_with: \"1\" }\n          { name_starts_with: \"2\" }\n          { name_starts_with: \"3\" }\n          { name_starts_with: \"4\" }\n          { name_starts_with: \"5\" }\n          { name_starts_with: \"6\" }\n          { name_starts_with: \"7\" }\n          { name_starts_with: \"8\" }\n          { name_starts_with: \"9\" }\n        ]\n      }\n    ) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query ALBUMS_PAGINATION_QUERY {\n    albumsConnection(\n      where: {\n        single: true\n        OR: [\n          { title_starts_with: \"0\" }\n          { title_starts_with: \"1\" }\n          { title_starts_with: \"2\" }\n          { title_starts_with: \"3\" }\n          { title_starts_with: \"4\" }\n          { title_starts_with: \"5\" }\n          { title_starts_with: \"6\" }\n          { title_starts_with: \"7\" }\n          { title_starts_with: \"8\" }\n          { title_starts_with: \"9\" }\n        ]\n      }\n    ) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -1162,7 +1182,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query ARTISTS_PAGINATION_QUERY($letter: String) {\n    artistsConnection(where: { name_starts_with: $letter }) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query ALBUMS_PAGINATION_QUERY($letter: String) {\n    albumsConnection(where: { single: true, title_starts_with: $letter }) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -1172,7 +1192,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query ALBUMS_PAGINATION_QUERY {\n    albumsConnection(\n      where: {\n        OR: [\n          { title_starts_with: \"0\" }\n          { title_starts_with: \"1\" }\n          { title_starts_with: \"2\" }\n          { title_starts_with: \"3\" }\n          { title_starts_with: \"4\" }\n          { title_starts_with: \"5\" }\n          { title_starts_with: \"6\" }\n          { title_starts_with: \"7\" }\n          { title_starts_with: \"8\" }\n          { title_starts_with: \"9\" }\n        ]\n      }\n    ) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query ALBUMS_PAGINATION_QUERY {\n    albumsConnection(\n      where: {\n        single: false\n        OR: [\n          { title_starts_with: \"0\" }\n          { title_starts_with: \"1\" }\n          { title_starts_with: \"2\" }\n          { title_starts_with: \"3\" }\n          { title_starts_with: \"4\" }\n          { title_starts_with: \"5\" }\n          { title_starts_with: \"6\" }\n          { title_starts_with: \"7\" }\n          { title_starts_with: \"8\" }\n          { title_starts_with: \"9\" }\n        ]\n      }\n    ) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -1182,7 +1202,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query ALBUMS_PAGINATION_QUERY($letter: String) {\n    albumsConnection(where: { title_starts_with: $letter }) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  query ALBUMS_PAGINATION_QUERY($letter: String) {\n    albumsConnection(where: { single: false, title_starts_with: $letter }) {\n      aggregate {\n        count\n      }\n    }\n  }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1223,10 +1243,12 @@ var SONGS_PAGINATION_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(
 var SONGS_PAGINATION_WITH_NUMBER_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject2());
 var ALBUMS_PAGINATION_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject3());
 var ALBUMS_PAGINATION_WITH_NUMBER_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject4());
-var ARTISTS_PAGINATION_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject5());
-var ARTISTS_PAGINATION_WITH_NUMBER_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject6());
-var COMPOSERS_PAGINATION_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject7());
-var COMPOSERS_PAGINATION_WITH_NUMBER_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject8());
+var SINGLES_PAGINATION_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject5());
+var SINGLES_PAGINATION_WITH_NUMBER_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject6());
+var ARTISTS_PAGINATION_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject7());
+var ARTISTS_PAGINATION_WITH_NUMBER_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject8());
+var COMPOSERS_PAGINATION_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject9());
+var COMPOSERS_PAGINATION_WITH_NUMBER_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject10());
 
 var Pagination = function Pagination(_ref) {
   var page = _ref.page,
@@ -1244,7 +1266,7 @@ var Pagination = function Pagination(_ref) {
       break;
 
     case "singles":
-      letter === "#" ? PAGINATION_QUERY = ALBUMS_PAGINATION_WITH_NUMBER_QUERY : PAGINATION_QUERY = ALBUMS_PAGINATION_QUERY;
+      letter === "#" ? PAGINATION_QUERY = SINGLES_PAGINATION_WITH_NUMBER_QUERY : PAGINATION_QUERY = SINGLES_PAGINATION_QUERY;
       break;
 
     case "artists":
@@ -1271,14 +1293,14 @@ var Pagination = function Pagination(_ref) {
   if (loading) return __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 210
     },
     __self: this
   }, "Loading...");
   if (error) return __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 211
     },
     __self: this
   }, "Error!");
@@ -1292,7 +1314,7 @@ var Pagination = function Pagination(_ref) {
   return __jsx(_styles_PaginationStyles__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 222
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1304,7 +1326,7 @@ var Pagination = function Pagination(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 187
+      lineNumber: 223
     },
     __self: this
   }, __jsx("a", {
@@ -1312,21 +1334,21 @@ var Pagination = function Pagination(_ref) {
     "aria-disabled": page <= 1,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 188
+      lineNumber: 224
     },
     __self: this
   }, "Prev")), __jsx("p", {
     className: "pagination-page-number",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 228
     },
     __self: this
   }, "Page ", page, " of ", pages), __jsx("p", {
     className: "pagination-count",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 231
     },
     __self: this
   }, count, " ", model), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1338,7 +1360,7 @@ var Pagination = function Pagination(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 198
+      lineNumber: 234
     },
     __self: this
   }, __jsx("a", {
@@ -1346,7 +1368,7 @@ var Pagination = function Pagination(_ref) {
     "aria-disabled": page >= pages,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 199
+      lineNumber: 235
     },
     __self: this
   }, "Next")));
@@ -1588,7 +1610,7 @@ var AutoComplete = /*#__PURE__*/function (_React$Component) {
       return __jsx(_styles_DropDown__WEBPACK_IMPORTED_MODULE_17__["SearchStyles"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 129
         },
         __self: this
       }, __jsx(downshift__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -1600,7 +1622,7 @@ var AutoComplete = /*#__PURE__*/function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 130
         },
         __self: this
       }, function (_ref) {
@@ -1612,20 +1634,20 @@ var AutoComplete = /*#__PURE__*/function (_React$Component) {
         return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 142
+            lineNumber: 143
           },
           __self: this
         }, __jsx(react_apollo__WEBPACK_IMPORTED_MODULE_13__["ApolloConsumer"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 143
+            lineNumber: 144
           },
           __self: this
         }, function (client) {
           return __jsx(StyledSearchBar, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 145
+              lineNumber: 146
             },
             __self: this
           }, __jsx("input", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, getInputProps({
@@ -1641,7 +1663,7 @@ var AutoComplete = /*#__PURE__*/function (_React$Component) {
           }), {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 146
+              lineNumber: 147
             },
             __self: this
           })), __jsx(react_select__WEBPACK_IMPORTED_MODULE_16__["default"], {
@@ -1652,14 +1674,14 @@ var AutoComplete = /*#__PURE__*/function (_React$Component) {
             placeholder: "Search for a".concat(_this2.state.item.toLowerCase().includes("a", 0) ? "n" : "", " ").concat(_this2.state.item.toLowerCase()),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 158
+              lineNumber: 159
             },
             __self: this
           }));
         }), isOpen ? __jsx(_styles_DropDown__WEBPACK_IMPORTED_MODULE_17__["DropDown"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 173
+            lineNumber: 174
           },
           __self: this
         }, _this2.state.items.map(function (item, index) {
@@ -1671,13 +1693,13 @@ var AutoComplete = /*#__PURE__*/function (_React$Component) {
             highlighted: index === highlightedIndex,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 175
+              lineNumber: 176
             },
             __self: this
           }), __jsx(_styles_song_title__WEBPACK_IMPORTED_MODULE_18__["default"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 179
+              lineNumber: 180
             },
             __self: this
           }, item.title || item.name));

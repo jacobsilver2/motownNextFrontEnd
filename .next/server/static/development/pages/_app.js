@@ -1183,7 +1183,7 @@ const SONGS_PAGINATION_WITH_NUMBER_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_
 `;
 const ALBUMS_PAGINATION_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_1___default.a`
   query ALBUMS_PAGINATION_QUERY($letter: String) {
-    albumsConnection(where: { title_starts_with: $letter }) {
+    albumsConnection(where: { single: false, title_starts_with: $letter }) {
       aggregate {
         count
       }
@@ -1194,6 +1194,41 @@ const ALBUMS_PAGINATION_WITH_NUMBER_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE
   query ALBUMS_PAGINATION_QUERY {
     albumsConnection(
       where: {
+        single: false
+        OR: [
+          { title_starts_with: "0" }
+          { title_starts_with: "1" }
+          { title_starts_with: "2" }
+          { title_starts_with: "3" }
+          { title_starts_with: "4" }
+          { title_starts_with: "5" }
+          { title_starts_with: "6" }
+          { title_starts_with: "7" }
+          { title_starts_with: "8" }
+          { title_starts_with: "9" }
+        ]
+      }
+    ) {
+      aggregate {
+        count
+      }
+    }
+  }
+`;
+const SINGLES_PAGINATION_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_1___default.a`
+  query ALBUMS_PAGINATION_QUERY($letter: String) {
+    albumsConnection(where: { single: true, title_starts_with: $letter }) {
+      aggregate {
+        count
+      }
+    }
+  }
+`;
+const SINGLES_PAGINATION_WITH_NUMBER_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_1___default.a`
+  query ALBUMS_PAGINATION_QUERY {
+    albumsConnection(
+      where: {
+        single: true
         OR: [
           { title_starts_with: "0" }
           { title_starts_with: "1" }
@@ -1298,7 +1333,7 @@ const Pagination = ({
       break;
 
     case "singles":
-      letter === "#" ? PAGINATION_QUERY = ALBUMS_PAGINATION_WITH_NUMBER_QUERY : PAGINATION_QUERY = ALBUMS_PAGINATION_QUERY;
+      letter === "#" ? PAGINATION_QUERY = SINGLES_PAGINATION_WITH_NUMBER_QUERY : PAGINATION_QUERY = SINGLES_PAGINATION_QUERY;
       break;
 
     case "artists":
@@ -1325,14 +1360,14 @@ const Pagination = ({
   if (loading) return __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 210
     },
     __self: undefined
   }, "Loading...");
   if (error) return __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 211
     },
     __self: undefined
   }, "Error!");
@@ -1346,7 +1381,7 @@ const Pagination = ({
   return __jsx(_styles_PaginationStyles__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 222
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1358,7 +1393,7 @@ const Pagination = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 187
+      lineNumber: 223
     },
     __self: undefined
   }, __jsx("a", {
@@ -1366,21 +1401,21 @@ const Pagination = ({
     "aria-disabled": page <= 1,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 188
+      lineNumber: 224
     },
     __self: undefined
   }, "Prev")), __jsx("p", {
     className: "pagination-page-number",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 228
     },
     __self: undefined
   }, "Page ", page, " of ", pages), __jsx("p", {
     className: "pagination-count",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 231
     },
     __self: undefined
   }, count, " ", model), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1392,7 +1427,7 @@ const Pagination = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 198
+      lineNumber: 234
     },
     __self: undefined
   }, __jsx("a", {
@@ -1400,7 +1435,7 @@ const Pagination = ({
     "aria-disabled": page >= pages,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 199
+      lineNumber: 235
     },
     __self: undefined
   }, "Next")));
@@ -1578,7 +1613,7 @@ class AutoComplete extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
     return __jsx(_styles_DropDown__WEBPACK_IMPORTED_MODULE_7__["SearchStyles"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 128
+        lineNumber: 129
       },
       __self: this
     }, __jsx(downshift__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1586,7 +1621,7 @@ class AutoComplete extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
       itemToString: item => item === null ? "" : item.title || item.name,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 129
+        lineNumber: 130
       },
       __self: this
     }, ({
@@ -1598,19 +1633,19 @@ class AutoComplete extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
     }) => __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 142
+        lineNumber: 143
       },
       __self: this
     }, __jsx(react_apollo__WEBPACK_IMPORTED_MODULE_3__["ApolloConsumer"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 143
+        lineNumber: 144
       },
       __self: this
     }, client => __jsx(StyledSearchBar, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 145
+        lineNumber: 146
       },
       __self: this
     }, __jsx("input", _extends({}, getInputProps({
@@ -1625,7 +1660,7 @@ class AutoComplete extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
     }), {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 146
+        lineNumber: 147
       },
       __self: this
     })), __jsx(react_select__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -1636,13 +1671,13 @@ class AutoComplete extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
       placeholder: `Search for a${this.state.item.toLowerCase().includes("a", 0) ? "n" : ""} ${this.state.item.toLowerCase()}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 158
+        lineNumber: 159
       },
       __self: this
     }))), isOpen ? __jsx(_styles_DropDown__WEBPACK_IMPORTED_MODULE_7__["DropDown"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 173
+        lineNumber: 174
       },
       __self: this
     }, this.state.items.map((item, index) => __jsx(_styles_DropDown__WEBPACK_IMPORTED_MODULE_7__["DropDownItem"], _extends({}, getItemProps({
@@ -1653,13 +1688,13 @@ class AutoComplete extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
       highlighted: index === highlightedIndex,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 175
+        lineNumber: 176
       },
       __self: this
     }), __jsx(_styles_song_title__WEBPACK_IMPORTED_MODULE_8__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 179
+        lineNumber: 180
       },
       __self: this
     }, item.title || item.name)))) : null)));

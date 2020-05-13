@@ -42,7 +42,7 @@ const SONGS_PAGINATION_WITH_NUMBER_QUERY = gql`
 `;
 const ALBUMS_PAGINATION_QUERY = gql`
   query ALBUMS_PAGINATION_QUERY($letter: String) {
-    albumsConnection(where: { title_starts_with: $letter }) {
+    albumsConnection(where: { single: false, title_starts_with: $letter }) {
       aggregate {
         count
       }
@@ -53,6 +53,42 @@ const ALBUMS_PAGINATION_WITH_NUMBER_QUERY = gql`
   query ALBUMS_PAGINATION_QUERY {
     albumsConnection(
       where: {
+        single: false
+        OR: [
+          { title_starts_with: "0" }
+          { title_starts_with: "1" }
+          { title_starts_with: "2" }
+          { title_starts_with: "3" }
+          { title_starts_with: "4" }
+          { title_starts_with: "5" }
+          { title_starts_with: "6" }
+          { title_starts_with: "7" }
+          { title_starts_with: "8" }
+          { title_starts_with: "9" }
+        ]
+      }
+    ) {
+      aggregate {
+        count
+      }
+    }
+  }
+`;
+
+const SINGLES_PAGINATION_QUERY = gql`
+  query ALBUMS_PAGINATION_QUERY($letter: String) {
+    albumsConnection(where: { single: true, title_starts_with: $letter }) {
+      aggregate {
+        count
+      }
+    }
+  }
+`;
+const SINGLES_PAGINATION_WITH_NUMBER_QUERY = gql`
+  query ALBUMS_PAGINATION_QUERY {
+    albumsConnection(
+      where: {
+        single: true
         OR: [
           { title_starts_with: "0" }
           { title_starts_with: "1" }
@@ -155,8 +191,8 @@ const Pagination = ({ page, model, letter }) => {
       break;
     case "singles":
       letter === "#"
-        ? (PAGINATION_QUERY = ALBUMS_PAGINATION_WITH_NUMBER_QUERY)
-        : (PAGINATION_QUERY = ALBUMS_PAGINATION_QUERY);
+        ? (PAGINATION_QUERY = SINGLES_PAGINATION_WITH_NUMBER_QUERY)
+        : (PAGINATION_QUERY = SINGLES_PAGINATION_QUERY);
       break;
     case "artists":
       PAGINATION_QUERY = ARTISTS_PAGINATION_QUERY;
