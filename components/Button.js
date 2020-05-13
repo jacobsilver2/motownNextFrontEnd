@@ -17,11 +17,12 @@ const StyledButton = styled.button`
 
   padding: ${(props) => (props.large ? "10px 20px" : "10px 20px")};
   font-size: ${(props) => (props.large ? "2rem" : "1.6rem")};
-  margin-top: ${(props) => (props.marginTop ? `${props.marginTop}` : "")};
+  /* margin-top: ${(props) => (props.marginTop ? `${props.marginTop}` : "")};
   margin-bottom: ${(props) =>
     props.marginBottom ? `${props.marginBottom}` : ""};
   margin-left: ${(props) => (props.marginLeft ? `${props.marginLeft}` : "")};
-  margin-right: ${(props) => (props.marginRight ? `${props.marginRight}` : "")};
+  margin-right: ${(props) =>
+    props.marginRight ? `${props.marginRight}` : ""}; */
 `;
 
 const Button = ({

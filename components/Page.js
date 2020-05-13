@@ -1,5 +1,8 @@
 import React from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import { useQuery } from "@apollo/react-hooks";
+import { CURRENT_USER_QUERY } from "./Nav";
+
 import Header from "./Header";
 import Meta from "./Meta";
 import AdminPanel from "./AdminPanel";
@@ -50,25 +53,27 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const StyledPage = styled.div`
+  position: relative;
   background: white;
   color: ${(props) => props.theme.black};
 `;
 
 const Inner = styled.div`
   max-width: ${(props) => props.theme.maxWidth};
-  margin: 0 auto;
+  margin: ${(props) => (props.loggedIn ? "0 auto 250px auto" : "0 auto")};
   padding: 2rem;
 `;
 
 const Page = ({ children }) => {
+  const { loading, error, data } = useQuery(CURRENT_USER_QUERY);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <StyledPage>
         <Meta />
         <Header />
-        <Inner>{children}</Inner>
-        <AdminPanel />
+        <Inner loggedIn={data && !!data.me}>{children}</Inner>
+        {data && data.me && <AdminPanel />}
       </StyledPage>
     </ThemeProvider>
   );

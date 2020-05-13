@@ -15,7 +15,7 @@ export const Center = styled.div`
 export const AdminPanelWrapper = styled.div`
   border-top: 10px solid ${(props) => props.theme.black};
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-gap: 20px;
   justify-content: center;
   align-items: stretch;
@@ -24,23 +24,15 @@ export const AdminPanelWrapper = styled.div`
   left: 0;
   right: 0;
   background-color: white;
-  height: 150px;
+  min-height: 150px;
+  max-height: 250px;
+  /* height: 100%; */
   overflow: scroll;
+  padding: 20px;
 `;
 
 export const SelectedItemsList = styled.ul`
   /* align-self: flex-start; */
-`;
-
-export const CURRENT_USER_QUERY = gql`
-  query {
-    me {
-      id
-      email
-      name
-      permissions
-    }
-  }
 `;
 
 export const LOCAL_STATE_QUERY = gql`
@@ -110,25 +102,15 @@ const AdminPanel = () => {
   }
 
   const {
-    loading: currentUserLoading,
-    error: currentUserError,
-    data: currentUserData,
-  } = useQuery(CURRENT_USER_QUERY);
-
-  const {
     loading: localStateLoading,
     error: localStateError,
     data: localStateData,
   } = useQuery(LOCAL_STATE_QUERY);
 
-  if (currentUserLoading) return "Loading...";
-  if (currentUserError) return `Error! ${error.message}`;
-  const { me } = currentUserData;
   return (
-    me && (
-      <>
-        <AdminPanelWrapper>
-          {/* {localStateData.selectedIds.length > 0 && (
+    <>
+      <AdminPanelWrapper>
+        {/* {localStateData.selectedIds.length > 0 && (
             <SelectedItemsList>
               <p>Selected Items:</p>
               {localStateData.selectedIds.map((selectedId) => (
@@ -136,40 +118,21 @@ const AdminPanel = () => {
               ))}
             </SelectedItemsList>
           )} */}
-          <ButtonComponent
-            marginTop="20px"
-            marginBottom="20px"
-            marginLeft="20px"
-            marginRight="20px"
-            buttonSize="large"
-            onClick={turnSingleIntoAlbum}
-          >
-            Turn Single Into Album
-          </ButtonComponent>
-          <ButtonComponent
-            marginTop="20px"
-            marginBottom="20px"
-            marginLeft="20px"
-            marginRight="20px"
-            onClick={turnSingleIntoAlbum}
-            buttonStyle="danger"
-            buttonSize="large"
-          >
-            Clear Selected Items
-          </ButtonComponent>
-          <ButtonComponent
-            marginTop="20px"
-            marginBottom="20px"
-            marginLeft="20px"
-            marginRight="20px"
-            buttonSize="large"
-            onClick={joinASideAndBSide}
-          >
-            Join A-Side and B-Side
-          </ButtonComponent>
-        </AdminPanelWrapper>
-      </>
-    )
+        <ButtonComponent buttonSize="large" onClick={turnSingleIntoAlbum}>
+          Turn Single Into Album
+        </ButtonComponent>
+        <ButtonComponent
+          onClick={turnSingleIntoAlbum}
+          buttonStyle="danger"
+          buttonSize="large"
+        >
+          Clear Selected Items
+        </ButtonComponent>
+        <ButtonComponent buttonSize="large" onClick={joinASideAndBSide}>
+          Join A-Side and B-Side
+        </ButtonComponent>
+      </AdminPanelWrapper>
+    </>
   );
 };
 

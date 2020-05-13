@@ -26,11 +26,15 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/next/dist/pages/_error": [
+    "/artists": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/songs": [
+    "/composer": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/signin": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
